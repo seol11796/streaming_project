@@ -23,5 +23,7 @@ npm start
 ---------
 
 1. 회원가입,로그인
+
 2 . 스트리밍 동영상 기능
-aws s3, Media Convert, cloudfront 사용하여 HLS 파일 형식으로 스트리밍 기능 제공 
+aws s3, Media Convert, cloudfront 사용하여 
+HLS 파일 형식으로 스트리밍 기능 제공 
