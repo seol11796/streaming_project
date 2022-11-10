@@ -9,12 +9,14 @@
 - 백엔드 :
 cd demo 
 ./gradlew bootRun
+
 ![image](https://user-images.githubusercontent.com/89733207/201004721-d279bd1f-84ab-4bc4-b759-94ace029cfe0.png)
 
 
 - 프론트앤드 : 
 cd todo-react-app
 npm start 
+
 ![image](https://user-images.githubusercontent.com/89733207/201004918-b014de72-3189-4966-868b-e3e97f72826f.png)
 
 
@@ -24,6 +26,6 @@ npm start
 
 1. 회원가입,로그인
 
-2 . 스트리밍 동영상 기능
+2. 스트리밍 동영상 기능
 aws s3, Media Convert, cloudfront 사용하여 
 HLS 파일 형식으로 스트리밍 기능 제공 
