@@ -22,7 +22,9 @@ class App extends React.Component {
     this.state = {
      items: [
      {id:"0", title:"video1", url:"http://d30em6q031z2u.cloudfront.net/temp/Sunset.mp4"},
-     {id:"1", title:"video2", url:"http://d30em6q031z2u.cloudfront.net/vod/hls/Surfing.m3u8"},
+     {id:"1", title:"video2",url:"http://d30em6q031z2u.cloudfront.net/temp/studyvideo.mp4"},
+     {id:"2", title:"video3",url:"http://d30em6q031z2u.cloudfront.net/vod/hls/studyvideo.m3u8"},
+     {id:"3", title:"video4", url:"http://d30em6q031z2u.cloudfront.net/vod/hls/Surfing.m3u8"},
 
 
      ],

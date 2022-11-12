@@ -77,6 +77,7 @@ window.open(this.state.item.title);
     height="100%"
     muted={true} //chrome정책으로 인해 자동 재생을 위해 mute 옵션을 true로 해주었다.
     playing={true}
+    controls={true}
     loop={true} />
 
 
