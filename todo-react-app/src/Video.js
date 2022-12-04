@@ -8,11 +8,17 @@ import {
   IconButton,
 } from "@material-ui/core";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+
+import {Link} from "react-router-dom"
+
 import ReactPlayer from 'react-player'
 import { useState, useEffect, useRef } from "react";
 
 
 import DeleteOutlined from "@material-ui/icons/DeleteOutlined";
+
 
 
 class Video extends React.Component {
@@ -42,31 +48,10 @@ window.open(this.state.item.title);
 
   };
 
-/*
-  enterKeyEventHandler = (e) => {
-    if (e.key === "Enter") {
-      this.setState({ readOnly: true });
-      this.update(this.state.item);
-    }
-  };
-*/
-/*
-  editEventHandler = (e) => {
-    const thisItem = this.state.item;
-    thisItem.title = e.target.value;
-    this.setState({ item: thisItem });
-  };
-*/
-/*
-  checkboxEventHandler = (e) => {
-    const thisItem = this.state.item;
-    thisItem.done = !thisItem.done;
-    this.setState({ item: thisItem });
-    this.update(this.state.item);
-  };
-*/
+
   render() {
     const item = this.state.item;
+
     return (
     <ListItem>
 
@@ -85,7 +70,17 @@ window.open(this.state.item.title);
 <ListItemText>
 
         <div>
-        <a href={item.url}>▶︎</a>
+        <div> item id : {item.id} </div>
+
+        <Link to={`/detail/${item.id}`}>
+
+        <Button>상세페이지 </Button>
+        </Link>
+
+         <Button variant="warning">
+         <a href={item.url}> click▶︎</a>
+         </Button>
+
         </div>
         </ListItemText>
 
