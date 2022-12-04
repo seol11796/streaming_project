@@ -33,6 +33,8 @@ class App extends React.Component {
     };
   }
 
+
+
   componentDidMount() {
 
      call("/video", "GET", null).then((response) =>
