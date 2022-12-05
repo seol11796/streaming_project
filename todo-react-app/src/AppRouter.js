@@ -3,6 +3,7 @@ import "./index.css";
 import App from "./App";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import Video from "./Video";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -30,9 +31,13 @@ class AppRouter extends React.Component {
               <Route path="/signup">
                 <SignUp />
               </Route>
+               <Route path="/video">
+                 <Video />
+               </Route>
               <Route path="/">
                 <App />
               </Route>
+
             </Switch>
           </div>
           <Box mt={5}>

@@ -14,32 +14,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.example.demo.service.VideoService;
 import com.example.demo.dto.VideoDTO;
 import com.example.demo.model.VideoEntity;
+import com.example.demo.persistence.VideoRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import javax.annotation.PostConstruct;
+import org.springframework.ui.Model;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("video")
+@RequiredArgsConstructor
 public class VideoController {
 
+	private final VideoRepository videoRepository;
 	@Autowired
 	private  VideoService service;
 
-	@GetMapping
-	public String testController() {
-		return "Hello World!";
+
+	// 여기서 Video 정보들 저장.
+	@PostConstruct
+	public void init(){
+		videoRepository.save(new VideoEntity("0","sample2","최신영화1","www.google.com"));
+		videoRepository.save(new VideoEntity("1","sample2","최신영화2","www.google.com"));
+		videoRepository.save(new VideoEntity("2","sample2","최신영화3","www.google.com"));
 	}
+
+	@GetMapping("/list")
+	public List<VideoEntity> getAllVideos() {
+		List<VideoEntity> videos = videoRepository.findAll();
+		return videos;
+	}
+
 
 	@GetMapping("/testGetMapping")
 	public String testControllerWithPath() {
 		return "Hello World! testGetMapping ";
 	}
 
-	@GetMapping("/{id}")
-	public String testControllerWithPathVariables(@PathVariable(required = false) int id) {
-		return "Hello World! ID " + id;
-	}
+
 
 	@GetMapping("/testvideo")
 	public ResponseEntity<?> testVideo(){
@@ -76,6 +90,7 @@ public class VideoController {
 
 			// (7) ResponseDTO를 리턴한다.
 			return ResponseEntity.ok(response);
+
 		} catch (Exception e) {
 			// (8) 혹시 예외가 나는 경우 dto대신 error에 메시지를 넣어 리턴한다.
 

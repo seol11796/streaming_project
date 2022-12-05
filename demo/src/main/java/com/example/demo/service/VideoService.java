@@ -53,6 +53,10 @@ public class VideoService {
         return repository.findByUserId(userId);
     }
 
+    public List<VideoEntity> findAll() {
+        return repository.findAll();
+    }
+
     public List<VideoEntity> update(final VideoEntity entity) {
         // (1) 저장 할 엔티티가 유효한지 확인한다. 이 메서드는 2.3.1 Create Todo에서 구현했다.
         validate(entity);

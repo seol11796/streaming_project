@@ -22,6 +22,7 @@ import DeleteOutlined from "@material-ui/icons/DeleteOutlined";
 
 
 class Video extends React.Component {
+  /*
   constructor(props) {
     super(props);
     this.state = { item: props.item, readOnly: true };
@@ -41,18 +42,25 @@ window.open(this.state.item.title);
     console.log("Event!", this.state.readOnly);
     this.setState({ readOnly: false }, () => {
       console.log("ReadOnly? ", this.state.readOnly);
-
-
     });
-
 
   };
 
-
+*/
   render() {
-    const item = this.state.item;
+    //const item = this.state.item;
 
     return (
+    <ReactPlayer
+       className="react-player"
+       url="www.google.com"
+       width="100%"
+       height="100%"
+       muted={true} //chrome정책으로 인해 자동 재생을 위해 mute 옵션을 true로 해주었다.
+       playing={true}
+       controls={true}
+       loop={true} />
+  /*
     <ListItem>
 
   <ReactPlayer
@@ -70,11 +78,11 @@ window.open(this.state.item.title);
 <ListItemText>
 
         <div>
-        <div> item id : {item.id} </div>
+       <div> item id : {item.id} </div>
 
         <Link to={`/detail/${item.id}`}>
 
-        <Button>상세페이지 </Button>
+        <Button> 여기는 상세 페이지 입니다. </Button>
         </Link>
 
          <Button variant="warning">
@@ -86,6 +94,7 @@ window.open(this.state.item.title);
 
 
  </ListItem>
+   */
     );
   }
 }
