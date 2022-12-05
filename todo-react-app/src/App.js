@@ -1,5 +1,6 @@
 import React from "react";
 import Video from "./Video";
+import Videos from "./Videos";
 
 import "./App.css";
 import {
@@ -13,6 +14,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { call, signout } from "./service/ApiService"; // signout 추가
+
 
 
 
@@ -42,7 +44,6 @@ class App extends React.Component {
         );
   }
 
-
   add = (item) => {
     call("/video", "POST", item).then((response) =>
       this.setState({ items: response.data })
@@ -69,7 +70,7 @@ class App extends React.Component {
       <Paper style={{ margin: 16 }}>
         <List>
           {this.state.items.map((item, idx) => (
-            <Video
+            <Videos
               item={item}
               key={item.id}
               delete={this.delete}
