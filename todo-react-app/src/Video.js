@@ -19,82 +19,26 @@ import { useState, useEffect, useRef } from "react";
 
 import DeleteOutlined from "@material-ui/icons/DeleteOutlined";
 
-
+import { call } from "./service/ApiService";
 
 class Video extends React.Component {
-  /*
-  constructor(props) {
-    super(props);
-    this.state = { item: props.item, readOnly: true };
-    this.delete = props.delete;
-   // this.update = props.update;
-  }
 
-gotoVideo = () => {
-console.log("console", this.state.item.url);
-window.open(this.state.item.title);
-}
-  deleteEventHandler = () => {
-    this.delete(this.state.item);
-  };
 
-  offReadOnlyMode = () => {
-    console.log("Event!", this.state.readOnly);
-    this.setState({ readOnly: false }, () => {
-      console.log("ReadOnly? ", this.state.readOnly);
-    });
-
-  };
-
-*/
   render() {
     //const item = this.state.item;
 
     return (
+    <div> item id : {this.state} </div>,
     <ReactPlayer
        className="react-player"
        url="www.google.com"
-       width="100%"
-       height="100%"
+       width="70%"
+       height="70%"
        muted={true} //chrome정책으로 인해 자동 재생을 위해 mute 옵션을 true로 해주었다.
        playing={true}
        controls={true}
        loop={true} />
-  /*
-    <ListItem>
 
-  <ReactPlayer
-    className="react-player"
-    url={item.url}
-    width="100%"
-    height="100%"
-    muted={true} //chrome정책으로 인해 자동 재생을 위해 mute 옵션을 true로 해주었다.
-    playing={true}
-    controls={true}
-    loop={true} />
-
-
-
-<ListItemText>
-
-        <div>
-       <div> item id : {item.id} </div>
-
-        <Link to={`/detail/${item.id}`}>
-
-        <Button> 여기는 상세 페이지 입니다. </Button>
-        </Link>
-
-         <Button variant="warning">
-         <a href={item.url}> click▶︎</a>
-         </Button>
-
-        </div>
-        </ListItemText>
-
-
- </ListItem>
-   */
     );
   }
 }

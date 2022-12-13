@@ -32,8 +32,9 @@ class AppRouter extends React.Component {
                 <SignUp />
               </Route>
                <Route path="/video">
-                 <Video />
+                  <Video />
                </Route>
+
               <Route path="/">
                 <App />
               </Route>
