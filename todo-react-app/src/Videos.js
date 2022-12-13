@@ -69,8 +69,8 @@ window.open(this.state.item.title);
         <div>
         <div> item id : {item.id} </div>
 
-        <Link to={`/detail/${item.id}`}>
 
+        <Link to={`/video`}>
         <Button>상세 페이지 이동 </Button>
         </Link>
 

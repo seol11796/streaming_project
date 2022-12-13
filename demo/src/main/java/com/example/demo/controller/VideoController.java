@@ -41,7 +41,8 @@ public class VideoController {
 		videoRepository.save(new VideoEntity("2","sample2","최신영화3","www.google.com"));
 	}
 
-	@GetMapping("/list")
+
+	@GetMapping("")
 	public List<VideoEntity> getAllVideos() {
 		List<VideoEntity> videos = videoRepository.findAll();
 		return videos;
